@@ -210,27 +210,6 @@ export default function Lobby({ setAuth }) {
     </Form>
   );
 
-  const touts = (
-    <div className="touts">
-      <div>
-        <h4>Simple multiplayer buzzer system</h4>
-        <p>Host a room and invite up to 200 people to join</p>
-      </div>
-      <div>
-        <h4>Join on any device</h4>
-        <p>
-          Use your computer, smartphone, or tablet to join and start buzzing
-        </p>
-      </div>
-      <div>
-        <h4>Free to use</h4>
-        <p>
-          Perfect for online quiz bowl, trivia night, or a classroom activity
-        </p>
-      </div>
-    </div>
-  );
-
   return (
     <main id="lobby">
       <section className="primary">
