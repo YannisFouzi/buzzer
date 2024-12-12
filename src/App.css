@@ -384,3 +384,43 @@ body {
 .App .dim {
   opacity: 0.5;
 }
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 8px;
+}
+
+.qr-container:hover {
+  transform: scale(1.05);
+}
+
+.qr-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--dimTextColor);
+}
+
+.qr-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.qr-modal svg {
+  padding: 20px;
+  border-radius: 12px;
+}

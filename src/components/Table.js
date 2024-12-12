@@ -1,5 +1,6 @@
 import { Howl } from 'howler';
 import { get, isEmpty, orderBy, round, some, sortBy, values } from 'lodash';
+import { QRCodeSVG } from 'qrcode.react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { AiOutlineDisconnect } from 'react-icons/ai';
@@ -22,6 +23,7 @@ export default function Table(game) {
   const buzzButton = useRef(null);
   const queueRef = useRef(null);
   const [buzzSound, setBuzzSound] = useState(null);
+  const [showQRModal, setShowQRModal] = useState(false);
 
   // Déplacer la logique de l'hôte ici, avant les useEffect
   const players = !game.gameMetadata
@@ -186,6 +188,18 @@ export default function Table(game) {
         setSound={() => setSound(!sound)}
       />
       <Container>
+        {showQRModal && (
+          <div className="qr-modal" onClick={() => setShowQRModal(false)}>
+            <QRCodeSVG
+              value={window.location.href}
+              size={256}
+              level="L"
+              includeMargin={true}
+              fgColor="#FFFFFF"
+              bgColor="transparent"
+            />
+          </div>
+        )}
         <section>
           <p id="room-title">Room {game.gameID}</p>
           {!game.isConnected ? (
@@ -208,6 +222,20 @@ export default function Table(game) {
           ) : null}
           {isHost ? (
             <div className="settings">
+              <div
+                className="qr-container"
+                onClick={() => setShowQRModal(true)}
+              >
+                <QRCodeSVG
+                  value={window.location.href}
+                  size={128}
+                  level="L"
+                  includeMargin={true}
+                  fgColor="#FFFFFF"
+                  bgColor="transparent"
+                />
+                <p className="qr-text">Scannez pour rejoindre</p>
+              </div>
               <div className="button-container">
                 <button
                   className="text-button"
