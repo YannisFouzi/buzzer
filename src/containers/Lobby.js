@@ -2,7 +2,7 @@ import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
-import Footer, { FooterSimple } from '../components/Footer.js';
+import Footer from '../components/Footer.js';
 import Header from '../components/Header.js';
 import { createRoom, getRoom, joinRoom } from '../lib/endpoints.js';
 
@@ -233,25 +233,9 @@ export default function Lobby({ setAuth }) {
 
   return (
     <main id="lobby">
-      <section className="primary d-none d-md-flex">
-        <div id="lobby-left">
-          <div>
-            <Header />
-            <section className="container-half">{touts}</section>
-          </div>
-          <section className="container-half">
-            <FooterSimple />
-          </section>
-        </div>
-        <div id="lobby-right">
-          <section className="container-half">{form}</section>
-        </div>
-      </section>
-      <section className="primary d-block d-md-none">
+      <section className="primary">
         <Header />
-        <Container className="container-mobile">{form}</Container>
-        <div className="divider" />
-        <Container className="container-mobile">{touts}</Container>
+        <Container className="container-centered">{form}</Container>
       </section>
       <Footer mobileOnly />
     </main>

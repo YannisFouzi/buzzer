@@ -127,76 +127,25 @@ body {
 
 /* LOBBY */
 
-.App #lobby-left {
-  flex-grow: 40;
-  flex-basis: 320px;
-  background-color: var(--darkBlueColor);
+.App .container-centered {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.App #lobby-right {
-  flex-grow: 60;
-  flex-basis: 480px;
-}
-
-.container-half {
-  width: 100%;
-  max-width: 375px;
-  padding-right: 40px;
-  padding-left: 40px;
-}
-
-@media screen and (max-width: 991px) {
-  .container-half {
-    max-width: 350px;
-  }
-}
-
-.App #lobby-left .container-half {
-  margin-left: auto;
-  margin-top: 100px;
-  padding-right: 60px;
-}
-
-.App #lobby-right .container-half {
-  margin-right: auto;
-  margin-top: 160px;
-  padding-left: 60px;
-}
-
-.App #lobby .container-mobile {
-  margin-top: 40px;
-  padding: 0 30px;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
   max-width: 400px;
 }
 
-.App .divider {
-  border: 1px solid var(--activeColor);
-  margin: 60px auto;
-  width: 75%;
-}
-
-.App .touts > :not(:first-child) {
-  margin-top: 40px;
-}
-
-.App .touts h4 {
-  font-weight: 500;
-  font-size: 1.2rem;
-  line-height: 140%;
-}
-
-.App .touts p {
-  color: var(--paragraphColor);
-  line-height: 140%;
-  font-size: 1rem;
+.App .lobby-form {
+  width: 100%;
+  padding: 30px;
+  background-color: var(--darkBlueColor);
+  border-radius: 12px;
 }
 
 .App .lobby-form h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
 }
 
 .App .lobby-form .form-group:not(:first-of-type) {
