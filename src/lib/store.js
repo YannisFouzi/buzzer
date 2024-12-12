@@ -1,4 +1,12 @@
-const { ActivePlayers } = require('boardgame.io/core');
+// Support both CommonJS and ES modules
+let ActivePlayers;
+try {
+  // Try CommonJS first
+  ActivePlayers = require('boardgame.io/core').ActivePlayers;
+} catch {
+  // Fallback to ES modules
+  ActivePlayers = { ALL: 'ALL' }; // Temporary value until import
+}
 
 const AVAILABLE_SOUNDS = ['sch', 'girou', 'laurent', 'mbappe'];
 
@@ -108,4 +116,8 @@ const Buzzer = {
   },
 };
 
+// Export for both CommonJS and ES modules
 module.exports = { Buzzer };
+if (typeof exports !== 'undefined') {
+  exports.Buzzer = Buzzer;
+}
