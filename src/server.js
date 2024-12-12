@@ -3,7 +3,7 @@ const ratelimit = require('koa-ratelimit');
 const serve = require('koa-static');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const { Buzzer } = require('./lib/store');
+const { Buzzer } = require('./lib/store.cjs');
 
 const server = Server({ games: [Buzzer], generateCredentials: () => uuidv4() });
 
