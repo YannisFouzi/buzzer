@@ -1,0 +1,386 @@
+:root {
+  --backgroundColor: #282c35;
+  --lightBackgroundColor: #343a48;
+  --redColor: #d0021b;
+  --lightRedColor: #e36776;
+  --yellowColor: #fff3c8;
+  --greenColor: #a7ff91;
+  --lightBlueColor: #aed1fb;
+  --hoverBlueColor: #4898f6;
+  --brightBlueColor: #348df5;
+  --activeColor: #3b404b;
+  --dimTextColor: #a7a9ae;
+  --disabledTextColor: #57595c;
+  --paragraphColor: #b4b4b4;
+  --darkBlueColor: #2c313e;
+  --disabledBlueColor: #1a477b;
+}
+
+html,
+body {
+  background-color: var(--backgroundColor);
+}
+
+.App {
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.App main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.App .primary {
+  flex: 1;
+  background-color: var(--backgroundColor);
+}
+
+.App header nav {
+  min-height: 60px;
+}
+
+.App header .navbar-brand {
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.App header .navbar-brand:hover {
+  color: white;
+}
+
+.App header nav {
+  justify-content: space-between;
+}
+
+.App header svg {
+  margin-right: 10px;
+}
+
+.App header .nav-buttons > :not(:first-child) {
+  margin-left: 5px;
+}
+
+/* BUTTON */
+
+.App button {
+  background: none;
+  font-weight: 700;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: solid 1px white;
+}
+
+.App button:disabled {
+  border-color: var(--disabledTextColor);
+  color: var(--disabledTextColor);
+}
+
+.App button:hover:enabled {
+  background-color: var(--lightBackgroundColor);
+}
+
+.App button:focus:enabled {
+  outline: none;
+}
+
+.App button.text-button {
+  font-weight: 500;
+  color: var(--dimTextColor);
+  border: none;
+}
+
+.App button.text-button:hover {
+  color: white;
+}
+
+/* FOOTER */
+.App footer {
+  background-color: var(--backgroundColor);
+  padding: 30px 0;
+  color: var(--paragraphColor);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.App #footer-simple {
+  padding: 30px 0;
+  color: var(--paragraphColor);
+}
+
+.App footer a,
+.App #footer-simple a {
+  color: var(--lightBlueColor);
+}
+
+.App footer a:hover,
+.App #footer-simple a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+/* LOBBY */
+
+.App #lobby-left {
+  flex-grow: 40;
+  flex-basis: 320px;
+  background-color: var(--darkBlueColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.App #lobby-right {
+  flex-grow: 60;
+  flex-basis: 480px;
+}
+
+.container-half {
+  width: 100%;
+  max-width: 375px;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+@media screen and (max-width: 991px) {
+  .container-half {
+    max-width: 350px;
+  }
+}
+
+.App #lobby-left .container-half {
+  margin-left: auto;
+  margin-top: 100px;
+  padding-right: 60px;
+}
+
+.App #lobby-right .container-half {
+  margin-right: auto;
+  margin-top: 160px;
+  padding-left: 60px;
+}
+
+.App #lobby .container-mobile {
+  margin-top: 40px;
+  padding: 0 30px;
+  max-width: 400px;
+}
+
+.App .divider {
+  border: 1px solid var(--activeColor);
+  margin: 60px auto;
+  width: 75%;
+}
+
+.App .touts > :not(:first-child) {
+  margin-top: 40px;
+}
+
+.App .touts h4 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 140%;
+}
+
+.App .touts p {
+  color: var(--paragraphColor);
+  line-height: 140%;
+  font-size: 1rem;
+}
+
+.App .lobby-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.App .lobby-form .form-group:not(:first-of-type) {
+  margin-top: 2rem;
+}
+
+.App .lobby-form .error-message {
+  height: 1rem;
+  font-size: 0.9rem;
+  color: var(--lightRedColor);
+  font-weight: 500;
+  text-align: center;
+}
+
+.App .lobby-form button[type='submit'] {
+  width: 100%;
+  background-color: var(--brightBlueColor);
+  border: none;
+  margin-top: 1rem;
+  padding: 12px 15px;
+}
+
+.App .lobby-form button[type='submit']:hover {
+  background-color: var(--hoverBlueColor);
+}
+
+.App .lobby-form button[type='submit']:disabled {
+  background-color: var(--disabledBlueColor);
+}
+
+.App .lobby-form button.inline {
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 500;
+  display: inline-block;
+  color: var(--lightBlueColor);
+  width: auto;
+}
+
+.App .lobby-form .switcher {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.App .lobby-form button.inline:hover {
+  opacity: 0.5;
+}
+
+/* GAME */
+.App #game .container-loading {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.App #game .container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.App #room-title {
+  margin-bottom: 0px;
+}
+
+.App .warning {
+  color: var(--lightRedColor);
+  font-weight: 500;
+}
+
+.App #buzzer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.App #buzzer > button {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--brightBlueColor);
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.App #buzzer > button:hover {
+  background-color: var(--hoverBlueColor);
+}
+
+.App #buzzer > button:active {
+  background-color: var(--darkBlueColor);
+}
+
+.App #buzzer > button:disabled {
+  background-color: var(--lightBackgroundColor);
+}
+
+@media screen and (max-width: 767px) {
+  .App #buzzer > button {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+.App .settings {
+  margin-top: 30px;
+}
+
+.App .settings > .button-container:not(:first-child) {
+  margin-top: 10px;
+}
+
+.App .settings button:hover:disabled {
+  background-color: none;
+}
+
+.App .settings .divider {
+  margin: 40px auto;
+  width: 50%;
+}
+
+.App #reset {
+  margin: 30px 0;
+}
+
+.App .queue {
+  margin-top: 40px;
+}
+
+.App .queue p {
+  margin-bottom: 0;
+}
+
+.App .queue ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.App .queue li {
+  font-size: 1.5rem;
+}
+
+.App .queue li .player-sign {
+  display: inline-block;
+  min-width: 150px;
+  padding: 5px 15px;
+  border-radius: 4px;
+  transition: all ease-in-out 0.1s;
+}
+
+.App .queue li .name {
+  font-weight: 600;
+}
+
+.App .queue li.resettable .player-sign {
+  cursor: pointer;
+}
+
+.App .queue li.resettable .player-sign:hover {
+  background-color: var(--lightBackgroundColor);
+}
+
+.App .queue .disconnected {
+  margin-left: 5px;
+  color: var(--redColor);
+  opacity: 1;
+}
+
+.App .mini {
+  font-size: 1rem;
+}
+
+.App .tiny {
+  font-size: 0.8rem;
+}
+
+.App .bold {
+  font-weight: 600;
+}
+
+.App .dim {
+  opacity: 0.5;
+}
