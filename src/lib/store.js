@@ -76,9 +76,7 @@ function toggleLock(G) {
 }
 
 function buzz(G, ctx, id) {
-  const newQueue = {
-    ...G.queue,
-  };
+  const newQueue = { ...G.queue };
   if (!newQueue[id]) {
     newQueue[id] = { id, timestamp: new Date().getTime() };
   }
@@ -96,6 +94,10 @@ export const Buzzer = {
     playerSounds: {},
     usedSounds: [],
   }),
+
+  turn: {
+    activePlayers: ActivePlayers.ALL,
+  },
 
   phases: {
     play: {
