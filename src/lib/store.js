@@ -1,4 +1,4 @@
-import { ActivePlayers } from 'boardgame.io/core';
+const { ActivePlayers } = require('boardgame.io/core');
 
 const AVAILABLE_SOUNDS = ['sch', 'girou', 'laurent', 'mbappe'];
 
@@ -85,7 +85,7 @@ function buzz(G, ctx, id) {
   G.queue = newQueue;
 }
 
-export const Buzzer = {
+const Buzzer = {
   name: 'buzzer',
   minPlayers: 2,
   maxPlayers: 200,
@@ -94,7 +94,7 @@ export const Buzzer = {
     queue: {},
     locked: false,
     playerSounds: {},
-    usedSounds: [], // Ajout du tableau des sons utilisés
+    usedSounds: [],
   }),
 
   phases: {
@@ -107,3 +107,5 @@ export const Buzzer = {
     },
   },
 };
+
+module.exports = { Buzzer };

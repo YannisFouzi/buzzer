@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Buzzer } from '../lib/store';
+import { Buzzer } from './store.js';
 
 axios.defaults.headers['Content-Type'] = 'application/json';
 axios.defaults.headers['Accept'] = 'application/json';

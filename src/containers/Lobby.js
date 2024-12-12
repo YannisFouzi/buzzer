@@ -2,9 +2,9 @@ import { get } from 'lodash';
 import React, { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
-import Footer, { FooterSimple } from '../components/Footer';
-import Header from '../components/Header';
-import { createRoom, getRoom, joinRoom } from '../lib/endpoints';
+import Footer, { FooterSimple } from '../components/Footer.js';
+import Header from '../components/Header.js';
+import { createRoom, getRoom, joinRoom } from '../lib/endpoints.js';
 
 const ERROR_TYPE = {
   emptyCode: 'emptyCode',

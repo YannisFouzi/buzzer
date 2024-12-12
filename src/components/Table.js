@@ -3,7 +3,7 @@ import { get, isEmpty, orderBy, round, some, sortBy, values } from 'lodash';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { AiOutlineDisconnect } from 'react-icons/ai';
-import Header from '../components/Header';
+import Header from '../components/Header.js';
 
 export default function Table(game) {
   console.log('=== Table Component Mount ===');

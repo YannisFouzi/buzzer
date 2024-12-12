@@ -1,10 +1,10 @@
-import path from 'path';
-import serve from 'koa-static';
-import ratelimit from 'koa-ratelimit';
-import { v4 as uuidv4 } from 'uuid';
+const { Server } = require('boardgame.io/server');
+const ratelimit = require('koa-ratelimit');
+const serve = require('koa-static');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
+const { Buzzer } = require('./lib/store');
 
-const Server = require('boardgame.io/server').Server;
-const Buzzer = require('./lib/store').Buzzer;
 const server = Server({ games: [Buzzer], generateCredentials: () => uuidv4() });
 
 const PORT = process.env.PORT || 4001;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { isNil } from 'lodash';
 import { useHistory } from 'react-router';
-import { leaveRoom } from '../lib/endpoints';
+import { leaveRoom } from '../lib/endpoints.js';
 
 function Logo({ size = 25 }) {
   return (

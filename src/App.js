@@ -1,15 +1,15 @@
+import { get, isNil } from 'lodash';
 import React, { useState } from 'react';
 import {
+  Redirect,
+  Route,
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect,
 } from 'react-router-dom';
-import { get, isNil } from 'lodash';
 
-import Lobby from './containers/Lobby';
-import Game from './containers/Game';
 import './App.css';
+import Game from './containers/Game.js';
+import Lobby from './containers/Lobby.js';
 
 function App() {
   const [auth, setAuth] = useState({

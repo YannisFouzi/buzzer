@@ -3,10 +3,10 @@ import { Client } from 'boardgame.io/react';
 import React from 'react';
 import { Container, Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
-import Table from '../components/Table';
-import { GAME_SERVER } from '../lib/endpoints';
-import { Buzzer } from '../lib/store';
+import Header from '../components/Header.js';
+import Table from '../components/Table.js';
+import { GAME_SERVER } from '../lib/endpoints.js';
+import { Buzzer } from '../lib/store.js';
 
 export default function Game({ auth, setAuth }) {
   const { id: roomID } = useParams();
