@@ -84,12 +84,7 @@ export default function Table(game) {
   ]);
 
   const playSound = useCallback(() => {
-    if (
-      sound &&
-      isEmpty(queueRef.current) &&
-      game.G?.queue?.[game.playerID] &&
-      buzzSound
-    ) {
+    if (sound && game.G?.queue?.[game.playerID] && buzzSound) {
       buzzSound.play();
     }
   }, [sound, game.G?.queue, game.playerID, buzzSound]);
