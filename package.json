@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "dev": "concurrently \"PORT=4000 yarn client\" \"PORT=4001 yarn start\"",
+    "dev": "concurrently \"cross-env PORT=4000 yarn client\" \"cross-env PORT=4001 yarn start\"",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "postinstall": "yarn build",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "cross-env": "^7.0.3",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.4"

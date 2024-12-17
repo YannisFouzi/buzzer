@@ -89,6 +89,29 @@ export default function Table(game) {
     }
   }, [sound, game.G?.queue, game.playerID, buzzSound]);
 
+  const attemptBuzz = () => {
+    if (!buzzed) {
+      game.moves.buzz(game.playerID);
+      setBuzzer(true);
+      setLastBuzz(Date.now());
+      if (sound && buzzSound) {
+        buzzSound.play();
+      }
+    }
+  };
+
+  // spacebar will buzz
+  useEffect(() => {
+    function onKeydown(e) {
+      if (e.keyCode === 32 && !e.repeat) {
+        buzzButton.current.click();
+        e.preventDefault();
+      }
+    }
+    window.addEventListener('keydown', onKeydown);
+    return () => window.removeEventListener('keydown', onKeydown);
+  }, []);
+
   useEffect(() => {
     if (!game.G?.queue) return;
 
@@ -106,37 +129,12 @@ export default function Table(game) {
       }
     }
 
-    if (loaded) {
-      playSound();
-    }
-
     if (!loaded) {
       setLoaded(true);
     }
 
     queueRef.current = game.G.queue;
   }, [game.G?.queue, loaded, lastBuzz, game.playerID, playSound]);
-
-  const attemptBuzz = () => {
-    if (!buzzed) {
-      playSound();
-      game.moves.buzz(game.playerID);
-      setBuzzer(true);
-      setLastBuzz(Date.now());
-    }
-  };
-
-  // spacebar will buzz
-  useEffect(() => {
-    function onKeydown(e) {
-      if (e.keyCode === 32 && !e.repeat) {
-        buzzButton.current.click();
-        e.preventDefault();
-      }
-    }
-    window.addEventListener('keydown', onKeydown);
-    return () => window.removeEventListener('keydown', onKeydown);
-  }, []);
 
   const queue = game.G?.queue
     ? sortBy(values(game.G.queue), ['timestamp'])
